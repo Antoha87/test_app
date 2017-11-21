@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
     # 3th party
     'rest_framework',
+    'rest_framework_swagger',
 
     # apps
     'being',

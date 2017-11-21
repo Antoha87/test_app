@@ -15,13 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from being.views import IndexView
+from being.views import IndexView, schema_view
 from feed_events.feeds import Rss, Atom, AtomList, AtomDetail
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('api_v0.urls')),
     url(r'^$', IndexView.as_view()),
+    url(r'^swagger/$', schema_view),
     url(r'^channels/rss/$', Rss()),
     url(r'^channels/atom/$', Atom()),
     url(r'^channels/atom/list/$', AtomList(), name='atom-list'),
