@@ -26,14 +26,17 @@ class Atom(Push):
 
 class AtomList(Push):
     title = 'Atom beings list'
-    link = "/channels/atom/list/"
+    link = "/channels/atom/list-display/"
     subtitle = 'Atom chanel'
 
     def items(self):
-        return BeingsListEvent.objects.all()
+        return BeingsListEvent.objects.all().order_by('-id')
 
     def item_title(self, item):
         return item.get_event()
+
+    def item_description(self, item):
+        return 'Event is  -%s' % item.get_event()
 
 
 class AtomDetail(Push):

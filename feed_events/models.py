@@ -29,7 +29,7 @@ class BeingsListEvent(models.Model):
         return self.event
 
     def get_absolute_url(self):
-        return reverse('atom-list')
+        return "/being/%i/" % self.id
 
     def save(self, force_insert=False, force_update=False, using=None,
              update_fields=None):

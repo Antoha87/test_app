@@ -25,6 +25,6 @@ urlpatterns = [
     url(r'^swagger/$', schema_view),
     url(r'^channels/rss/$', Rss()),
     url(r'^channels/atom/$', Atom()),
-    url(r'^channels/atom/list/$', AtomList(), name='atom-list'),
+    url(r'^channels/atom/list-display/$', AtomList(), name='atom-list'),
     url(r'^channels/atom/detail/(?P<slug>[\-\w]+)/$', AtomDetail(), name='atom-detail'),
 ]

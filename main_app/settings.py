@@ -28,8 +28,8 @@ DEBUG = True
 SITE_ID = 1
 ALLOWED_HOSTS = ['*']
 
-PUSH_HUB = 'https://pubsubhubbub.appspot.com'
-
+#PUSH_HUB = 'https://pubsubhubbub.appspot.com'
+PUSH_HUB = 'https://pubsubhubbub.superfeedr.com'
 
 # Application definition
 
