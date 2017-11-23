@@ -35,6 +35,8 @@ class BeingsListEvent(models.Model):
              update_fields=None):
         rss_url = reverse('atom-list')
         ping_hub('https://%s%s' % (get_current_site(settings.SITE_ID).domain, rss_url))
+        print ('*************************************************')
+        print('https://%s%s' % (get_current_site(settings.SITE_ID).domain, rss_url))
         super(BeingsListEvent, self).save()
 
 
@@ -55,5 +57,7 @@ class BeingsEvent(models.Model):
     def save(self, force_insert=False, force_update=False, using=None,
              update_fields=None):
         rss_url = reverse('atom-detail', kwargs={'slug': self.being.name})
+        print ('*************************************************')
         ping_hub('https://%s%s' % (get_current_site(settings.SITE_ID).domain, rss_url))
+        print('https://%s%s' % (get_current_site(settings.SITE_ID).domain, rss_url))
         super(BeingsEvent, self).save()
